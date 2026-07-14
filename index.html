@@ -111,11 +111,17 @@
   .clients { background: var(--white); }
   .client-logos { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
   .client-chip {
-    padding: 18px 34px; border-radius: 12px; background: var(--bg);
+    padding: 16px 28px; border-radius: 12px; background: var(--bg);
     border: 1px solid #e1e8f0; font-weight: 700; color: var(--navy); font-size: 1.05rem;
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 14px; text-decoration: none;
+    transition: transform .15s, box-shadow .2s;
   }
-  .client-chip .dot { width: 12px; height: 12px; border-radius: 50%; }
+  a.client-chip:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(13,35,64,.12); border-color: var(--orange); }
+  .client-chip small { display: block; font-weight: 500; font-size: .78rem; color: var(--muted); }
+  .client-badge {
+    flex: 0 0 44px; height: 44px; border-radius: 10px; color: var(--white);
+    display: grid; place-items: center; font-size: 1.05rem; font-weight: 800; letter-spacing: .5px;
+  }
 
   /* Why us */
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
@@ -189,7 +195,7 @@
 <section class="hero" id="home">
   <span class="badge">GST Registered · Trusted by Oil Marketing Companies</span>
   <h1>Everything a <span>Petrol Pump</span> Needs — From Construction to Commissioning</h1>
-  <p>A&amp;P Engineering and Construction is your single turnkey partner for retail fuel outlets of HPCL, Indian Oil, BPCL, Nayara and more — civil construction, machine installation, automation, electricals and maintenance, all under one roof, to OMC standards.</p>
+  <p>A&amp;P Engineering and Construction is your single turnkey partner for retail fuel outlets of HPCL, Nayara Energy and other oil marketing companies — civil construction, machine installation, automation, electricals and maintenance, all under one roof, to OMC standards.</p>
   <div class="hero-actions">
     <a class="btn btn-primary" href="#contact">Request a Quote</a>
     <a class="btn btn-outline" href="#services">Our Services</a>
@@ -256,11 +262,18 @@
       <p>We execute installation and maintenance work for dealers and outlets of India's leading oil marketing companies.</p>
     </div>
     <div class="client-logos">
-      <div class="client-chip"><span class="dot" style="background:#e31e24"></span>HPCL — Hindustan Petroleum</div>
-      <div class="client-chip"><span class="dot" style="background:#f47b20"></span>Indian Oil (IOCL)</div>
-      <div class="client-chip"><span class="dot" style="background:#ffd200"></span>BPCL — Bharat Petroleum</div>
-      <div class="client-chip"><span class="dot" style="background:#e4002b"></span>Nayara Energy</div>
-      <div class="client-chip"><span class="dot" style="background:#00a651"></span>Other OMC Dealers</div>
+      <a class="client-chip" href="https://www.hindustanpetroleum.com" target="_blank" rel="noopener">
+        <span class="client-badge" style="background:#003087">HP</span>
+        <span>HPCL — Hindustan Petroleum<small>hindustanpetroleum.com ↗</small></span>
+      </a>
+      <a class="client-chip" href="https://www.nayaraenergy.com" target="_blank" rel="noopener">
+        <span class="client-badge" style="background:#e4002b">N</span>
+        <span>Nayara Energy<small>nayaraenergy.com ↗</small></span>
+      </a>
+      <div class="client-chip">
+        <span class="client-badge" style="background:#00a651">+</span>
+        <span>Other OMC Dealers<small>IOCL · BPCL · more</small></span>
+      </div>
     </div>
   </div>
 </section>
@@ -281,6 +294,16 @@
         <div class="icon">🔧</div>
         <h3>HPCL Meerut Region — Automation Maintenance</h3>
         <p>Ongoing automation maintenance work across HPCL retail outlets in the Meerut region.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏗️</div>
+        <h3>HPCL Meerut Region — Civil Works</h3>
+        <p>Civil construction works in progress at HPCL retail outlets in the Meerut region.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏗️</div>
+        <h3>HPCL Agra Region — Civil Works</h3>
+        <p>Civil construction works in progress at HPCL retail outlets in the Agra region.</p>
       </div>
     </div>
   </div>
@@ -326,7 +349,7 @@
       </div>
       <div class="why-item">
         <div class="tick">✓</div>
-        <div><h4>OMC Standards Compliance</h4><p>All work executed as per HPCL / IOCL / BPCL guidelines and safety norms.</p></div>
+        <div><h4>OMC Standards Compliance</h4><p>All work executed as per HPCL, Nayara and other OMC guidelines and safety norms.</p></div>
       </div>
       <div class="why-item">
         <div class="tick">✓</div>
@@ -383,8 +406,8 @@
         <input id="name" name="name" required placeholder="Full name">
         <label for="phone">Phone Number</label>
         <input id="phone" name="phone" required placeholder="+91">
-        <label for="outlet">Outlet / Company (HPCL, IOCL, BPCL…)</label>
-        <input id="outlet" name="outlet" placeholder="e.g. HPCL dealer, Lucknow">
+        <label for="outlet">Outlet / Company (HPCL, Nayara…)</label>
+        <input id="outlet" name="outlet" placeholder="e.g. HPCL dealer, Meerut">
         <label for="message">Requirement</label>
         <textarea id="message" name="message" rows="4" required placeholder="Describe the installation or service you need"></textarea>
         <button type="submit">Send Enquiry</button>
